@@ -17,32 +17,32 @@ class Trip
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
      */
     private $passenger_id;
     
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $from;
+    private $tripFrom;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $to;
+    private $tripTo;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=100)
      */
     private $departure;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=100)
      */
     private $arrival;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="integer")
      */
     private $is_active;
 
@@ -60,7 +60,7 @@ class Trip
     /**
      * Set passengerId
      *
-     * @param integer $passengerId
+     * @param string $passengerId
      *
      * @return Trip
      */
@@ -74,7 +74,7 @@ class Trip
     /**
      * Get passengerId
      *
-     * @return integer
+     * @return string
      */
     public function getPassengerId()
     {
@@ -88,21 +88,21 @@ class Trip
      *
      * @return Trip
      */
-    public function setFrom($from)
+    public function setTripFrom($from)
     {
-        $this->from = $from;
+        $this->tripFrom = $from;
 
         return $this;
     }
 
     /**
-     * Get from
+     * Get tripFrom
      *
      * @return string
      */
-    public function getFrom()
+    public function getTripFrom()
     {
-        return $this->from;
+        return $this->tripFrom;
     }
 
     /**
@@ -112,27 +112,27 @@ class Trip
      *
      * @return Trip
      */
-    public function setTo($to)
+    public function setTripTo($to)
     {
-        $this->to = $to;
+        $this->tripTo = $to;
 
         return $this;
     }
 
     /**
-     * Get to
+     * Get tripTo
      *
      * @return string
      */
-    public function getTo()
+    public function getTripTo()
     {
-        return $this->to;
+        return $this->TripTo;
     }
 
     /**
      * Set departure
      *
-     * @param integer $departure
+     * @param string $departure
      *
      * @return Trip
      */
@@ -156,7 +156,7 @@ class Trip
     /**
      * Set arrival
      *
-     * @param integer $arrival
+     * @param string $arrival
      *
      * @return Trip
      */
@@ -180,7 +180,7 @@ class Trip
     /**
      * Set isActive
      *
-     * @param string $isActive
+     * @param integer $isActive
      *
      * @return Trip
      */

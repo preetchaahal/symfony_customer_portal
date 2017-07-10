@@ -37,34 +37,23 @@
         </tr>
       </thead>
       <tbody>
+        {% if(passengers) %}
+            {% for passenger in passengers %}
+            <tr>
+              <td>{{ passenger.title }}</td>
+              <td>{{ passenger.firstname }}</td>
+              <td>{{ passenger.surname }}</td>
+              <td>{{ passenger.passportid }}</td>
+              <td><a href="" class="btn btn-default">Remove</a></td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+              <td colspan="5"> No data!</td>
+            </tr>
+        {% endif %}
         <tr>
-          <td>Mr</td>
-          <td>John</td>
-          <td>Doe</td>
-          <td>A123456</td>
-          <td><a href="" class="btn btn-default">Remove</a></td>
-        </tr>
-        <tr>
-          <td>Mr</td>
-          <td>John</td>
-          <td>Doe</td>
-          <td>A123456</td>
-          <td><a href="" class="btn btn-default">Remove</a></td>
-        </tr><tr>
-          <td>Mr</td>
-          <td>John</td>
-          <td>Doe</td>
-          <td>A123456</td>
-          <td><a href="" class="btn btn-default">Remove</a></td>
-        </tr><tr>
-          <td>Mr</td>
-          <td>John</td>
-          <td>Doe</td>
-          <td>A123456</td>
-          <td><a href="" class="btn btn-default">Remove</a></td>
-        </tr>
-        <tr>
-          <td colspan="5" class="text-right"><a href="" class="btn btn-default"><b class="">+</b> Add</a></td>
+          <td colspan="5" class="text-right"><a href="{{ path('addPassengerPage') }}" class="btn btn-default"><b class="">+</b> Add</a></td>
         </tr>
       </tbody>
     </table>
@@ -84,6 +73,22 @@
         </tr>
       </thead>
       <tbody>
+        {% if(trips) %}
+          {% for trip in trips %}
+            <tr>
+                <td>LHR</td>
+                <td>JFK</td>
+                <td>30/Nov/2014 10:30</td>
+                <td>30/Nov/2014 15:25</td>
+                <td>John Doe, Jane Doe, Annabeth Doe</td>
+                <td><a href="" class="btn btn-default">Remove</a></td>
+            </tr>
+          {% endfor %}
+        {% else %}
+            <tr>
+              <td colspan="5"> No data!</td>
+            </tr>
+        {% endif %}
         <tr>
           <td>LHR</td>
           <td>JFK</td>
@@ -93,15 +98,7 @@
           <td><a href="" class="btn btn-default">Remove</a></td>
         </tr>
         <tr>
-          <td>LHR</td>
-          <td>JFK</td>
-          <td>30/Nov/2014 10:30</td>
-          <td>30/Nov/2014 15:25</td>
-          <td>John Doe, Jane Doe, Annabeth Doe</td>
-          <td><a href="" class="btn btn-default">Remove</a></td>
-        </tr>
-        <tr>
-          <td colspan="6" class="text-right"><a href="" class="btn btn-default"><b class="">+</b> Add</a></td>
+          <td colspan="6" class="text-right"><a href="{{ path('addTripPage') }}" class="btn btn-default"><b class="">+</b> Add</a></td>
         </tr>
       </tbody>
     </table>

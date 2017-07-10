@@ -17,6 +17,11 @@ class Passenger
     private $id;
 
     /**
+     * @ORM\Column(type="integer")
+     */
+    private $user_id;
+
+    /**
      * @ORM\Column(type="string", length=20)
      */
     private $title;
@@ -50,6 +55,30 @@ class Passenger
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get user_id
+     *
+     * @return integer
+     */
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    /**
+     * Set userId
+     *
+     * @param integer $userId
+     *
+     * @return Passenger
+     */
+    public function setUserId($userId)
+    {
+        $this->user_id = $userId;
+
+        return $this;
     }
 
     /**

@@ -2,49 +2,36 @@
 
 {% block body %}
 <div class="row">
-      <legend>Basic Info</legend>
-      <form>
+      <legend>Add Trip Info</legend>
+      <form action="{{ path('addTrip') }}" method="post">
         <div class="form-group">
           <label for="exampleInput1">From</label>
-          <input type="text" class="form-control" id="exampleInput1" placeholder="Enter name">
+          <input type="text" class="form-control" id="exampleInput1" placeholder="Trip from" name="tripFrom">
         </div>
         <div class="form-group">
           <label for="exampleInput2">To</label>
-          <input type="text" class="form-control" id="exampleInput2" placeholder="Enter address">
+          <input type="text" class="form-control" id="exampleInput2" placeholder="Trip to" name="tripTo">
         </div>
         <div class="form-group">
           <label for="exampleInput3">Departure</label>
-          <input type="text" class="form-control" id="exampleInput3" placeholder="Enter city">
+          <input type="text" class="form-control" id="exampleInput3" placeholder="Departure" name="departure">
         </div>
         <div class="form-group">
           <label for="exampleInput4">Arrival</label>
-          <input type="text" class="form-control" id="exampleInput4" placeholder="Enter country">
+          <input type="text" class="form-control" id="exampleInput4" placeholder="Arrival" name="arrival">
         </div>
         <div class="form-group">
           <label for="exampleInput4">Passengers</label>
+          {% for user in users %}
           <div class="checkbox">
             <label>
-              <input type="checkbox"> Check me out
+              <input type="checkbox" name="passengers[]" value="{{ user.id }}"> {{ user.username }}
             </label>
           </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox"> Check me out
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox"> Check me out
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox"> Check me out
-            </label>
-          </div>
+          {% endfor %}
         </div>
         <div class="pull-right clearfix"> 
-        <button type="submit" class="btn btn-default"><b><i class="glyphicon glyphicon-plus"></i> Add</b></button>
+        <button type="submit" class="btn btn-default" name="submit"><b><i class="glyphicon glyphicon-plus"></i> Add</b></button>
       
       </form>
   </div>
